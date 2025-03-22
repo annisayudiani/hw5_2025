@@ -18,7 +18,7 @@ Animate the logo with keyframes */
 }
 
 /* Step 2
-Edit the body element */
+Style the body element */
 body {
     /* use the Poppins font with serif as a backup */
     font-family: 'Poppins', serif;
@@ -29,7 +29,7 @@ body {
 }
 
 /* Step 3
-Edit the css for the header tag (all instances) to use flex. */
+Style the css for the header tag (all instances) to use flex. */
 header {
     display: flex;
     flex-direction: column;
@@ -37,7 +37,7 @@ header {
 }
 
 /* Step 4
-Edit the css for the nav_links class to use flex to match the example */
+Style the css for the nav_links class to use flex to match the example */
 .nav_links {
     display: flex;
     flex-direction: column;
@@ -68,18 +68,18 @@ Style only header elements that are direct children of a card class
 }
 
 /* Step 7
-Edit the css for the card class so that they match the example and they all have the same width. */
+Style the css for the card class so that they match the example */
 .card {
     display: flex;
     flex-direction: column;
 
-    /* Set the initial size of each card class to be 450px */
+    /* Style the card class so that they have the same width */
     flex-basis: 450px;
 }
 
 
 /* Step 8
-Edit the css for the pricing class so that they match the example */
+Style the css for the pricing class so that they match the example */
 .pricing {
     display: flex;
     flex-wrap: wrap;
@@ -98,7 +98,7 @@ Style images in the gallery class. */
 }
 
 /* Step 10
-Edit the css for the gallery class to use flex to match the example. */
+Style the css for the gallery class to use flex to match the example */
 .gallery {
     display: flex;
     flex-wrap: wrap;
@@ -109,7 +109,7 @@ Edit the css for the gallery class to use flex to match the example. */
 /* Large screen size */
 @media screen and (min-width: 900px) {
     /* Step 11
-    Edit the css for the header tag (all instances) and the nav_links class to match the example */
+    Style the css for the header tag (all instances) and the nav_links class to match the example */
     header, .nav_links {
         display: flex;
         flex-direction: row;
@@ -119,7 +119,7 @@ Edit the css for the gallery class to use flex to match the example. */
     }
 
     /* Step 12
-    Edit the css for the pricing and card classes to match the example by setting the elements to have the same width. */
+    Style the css for the pricing and card classes to match the example by setting the elements to have the same width. */
     .pricing, .card {
         flex-basis: 275px;
     }
@@ -157,7 +157,7 @@ Remove the animation for the logo if prefers-reduced-motion is selected in the a
     }
 
     /* Step 17
-    Edit the nav/nav_links elements so that they are spaced according to the image reference. */
+    Style the nav/nav_links elements so that they are spaced according to the image reference. */
     nav {
         width: 100%;
     }
@@ -168,7 +168,7 @@ Remove the animation for the logo if prefers-reduced-motion is selected in the a
     }
 
     /* Step 18
-    Edit the pricing class so that the elements align along the bottom. */
+    Style the pricing class so that the elements align along the bottom. */
     .pricing {
         align-items: flex-end;
         flex-wrap: nowrap;
@@ -188,7 +188,7 @@ Remove the animation for the logo if prefers-reduced-motion is selected in the a
     }
 
     /* Step 21
-   Add the thumbs up entity at the end of the second li elements on each card. */
+   Add a thumbs-up entity at the end of the second li elements on each card. */
     .card ul li:nth-child(2)::after {
         content: '\1F44D'
     }
