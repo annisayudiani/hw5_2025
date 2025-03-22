@@ -1,0 +1,196 @@
+/* Step 1
+Animate the logo with keyframes */
+@keyframes logo-animation {
+    /* Starts from a width of 25px and an opacity of 0 */
+    0%   {width: 25px; opacity: 0;}
+
+    /* Ends with a width of 475px and an opacity of 1 */
+    100% {width: 475px; opacity: 1;}
+  }
+
+#logo {
+    /* Set the fixed width of the logo after the animation ends */
+    width: 475px;
+
+    /* The animation takes 5 seconds and only happens when the page is loaded. */
+    animation-name: logo-animation;
+    animation-duration: 5s;
+}
+
+/* Step 2
+Edit the body element */
+body {
+    /* use the Poppins font with serif as a backup */
+    font-family: 'Poppins', serif;
+
+    /* Add a background-image with a backup color of light gray. */
+    background-image: url('../images/concrete_seamless.png');
+    background-color: #f1f1f1;
+}
+
+/* Step 3
+Edit the css for the header tag (all instances) to use flex. */
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Step 4
+Edit the css for the nav_links class to use flex to match the example */
+.nav_links {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Step 5
+Style the visited links with the default link color. */
+a:visited {
+    color: #0000EE;
+}
+
+/* Step 6
+Style only header elements that are direct children of a card class
+*/
+.card > header {
+    background-color: #288088; /* Add a teal background color */
+    border: solid 2px #45ADAD; /* Add a blue border */
+    padding: 20px 0px; /* Add padding on the top and the bottom */
+
+    /* Add rounded corners on the top left and right sides */
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+}
+
+.card {
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+}
+
+/* Step 7
+Edit the css for the card class so that they match the example and they all have the same width. */
+.card {
+    display: flex;
+    flex-direction: column;
+
+    /* Set the initial size of each card class to be 450px */
+    flex-basis: 450px;
+}
+
+
+/* Step 8
+Edit the css for the pricing class so that they match the example */
+.pricing {
+    display: flex;
+    flex-wrap: wrap;
+
+    /* Set the cards to be centered both horizontally and vertically */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Step 9
+Style images in the gallery class. */
+.gallery img {
+    border: solid 10px #50C7C7; /* Add a blue border */
+    margin: 10px; /* Add a margin on all sides */
+    width: 300px; /* Set width of each image */
+}
+
+/* Step 10
+Edit the css for the gallery class to use flex to match the example. */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+/* Large screen size */
+@media screen and (min-width: 900px) {
+    /* Step 11
+    Edit the css for the header tag (all instances) and the nav_links class to match the example */
+    header, .nav_links {
+        display: flex;
+        flex-direction: row;
+
+        /* Set the logo to be displayed as far to the left as possible and the links as far to the right as possible */
+        justify-content: space-between;
+    }
+
+    /* Step 12
+    Edit the css for the pricing and card classes to match the example by setting the elements to have the same width. */
+    .pricing, .card {
+        flex-basis: 275px;
+    }
+
+    /* Step 13
+    Modify the first header (the navigation bar) so that it remains visible at the top of the screen as visitors scroll down. */
+    body > header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
+
+    /* Add a margin on the top of the main class to that the display does not overlap with the navigation bar  */
+    main {
+        margin-top: 100px;
+    }
+}
+
+/* Step 14
+Remove the animation for the logo if prefers-reduced-motion is selected in the accessibility preferences. */
+@media screen and (prefers-reduced-motion: reduce) {
+    #logo {
+      animation: none;
+    }
+}
+
+
+/* Print display */
+@media print {
+    /* Step 15 and 16
+     Change the font on the body to Arial with a backup value of  Helvetica on print display and remove the background image */
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-image: none;
+    }
+
+    /* Step 17
+    Edit the nav/nav_links elements so that they are spaced according to the image reference. */
+    nav {
+        width: 100%;
+    }
+
+    .nav_links {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    /* Step 18
+    Edit the pricing class so that the elements align along the bottom. */
+    .pricing {
+        align-items: flex-end;
+        flex-wrap: nowrap;
+    }
+
+    /* Step 19
+    Style the card elements */
+    .card {
+        border: solid 2px #45ADDD; /* Add a blue border */
+        flex-basis: 325px; /* Set the initial width of each card */
+    }
+
+    /* Step 20
+    Remove all parts of the gallery from the print display */
+    #gallery, .gallery {
+        display: none;
+    }
+
+    /* Step 21
+   Add the thumbs up entity at the end of the second li elements on each card. */
+    .card ul li:nth-child(2)::after {
+        content: '\1F44D'
+    }
+
+}
